@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Web site created by WhiskerBiscut" />
+        <title>WhiskerBiscuits Applications - Counter</title>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <p>
+                <span>Counter:&nbsp</span>
+                <span id="app-counter">0</span>
+            </p>
+            <button id="app-button__increment" type="button">Increment</button>
+            <button id="app-button__decrement" type="button">Decrement</button>
+        </div>
+        <script type="text/javascript">
+            (() => {
+                const increment = document.getElementById('app-button__increment');
+                const decrement = document.getElementById('app-button__decrement');
+                const counter = document.getElementById('app-counter');
+                increment.addEventListener('click', () => {
+                    counter.innerText = (parseInt(counter.innerText, 10) || 0) + 1;
+                });
+                decrement.addEventListener('click', () => {
+                    counter.innerText = (parseInt(counter.innerText, 10) || 0) - 1;
+                });
+            })();
+        </script>
+    </body>
+</html>
